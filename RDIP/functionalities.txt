@@ -1,0 +1,19 @@
+Functionalities
+Links:
+Introduction:It gives an introduction of the experiment to be performed
+Theory:On clicking on this button a detailed explanation of the experiment is displayed on the screen.
+objective:It shows the objective of the experiment
+Experiment:on pressing this buttons the experiment is displayed where the sentences can be formed as a part of the experiment
+quizzes:It provides few questions as quiz
+
+Buttons and their functionalities:
+Reform the sentence:This button is used to reform the sentence it there is any mistake in the sentence
+Check the correctness of the sentence:To check how correct the sentence is and produces an output
+check correct sentence:Displays the correct sentence on the screen
+words:each word of the sentence is made as a button and jumbled which should be click upon to form a sentence
+
+Functionalities can be added:
+1.A few examples of the complex sentences in dorming sentences experiment can be added in the theory.An examples button can be added in the theory clicking upon which examples are displayed
+2.Local languages can be added in the dropdown menu appart from hindi in the experiment page
+3.IIITh logo present on the right side corner should be linked to the iiith official webpage.
+
