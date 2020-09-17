@@ -1,15 +1,4 @@
-
-function p()
-{//alert("hh");
-var x;
-x=document.getElementById("language").value;
-//alert(x);
-if(x.localeCompare("english")==0)
-document.getElementById("p1").innerHTML="Form a sentence (Declarative or Interrogative or any other type) from the given words";
-else
-document.getElementById("p1").innerHTML="दिए गए शब्दों में से एक वाक्य (डिक्लेरेटिव या इंट्रोगेटिव या किसी अन्य प्रकार)";
-//alert("hello");
-var eng = [["John ate an apple before afternoon","before afternoon John ate an apple","John before afternoon ate an apple"],
+var english = [["John ate an apple before afternoon","before afternoon John ate an apple","John before afternoon ate an apple"],
 ["some students like to study in the night","at night some students like to study"],
 ["John and Mary went to church","Mary and John went to church"],
 ["John went to church after eating","after eating John went to church","John after eating went to church"],
@@ -24,4 +13,44 @@ var hindi=[["राम और श्याम बाजार गयें","र
 ["मैंने उसे बताया कि राम सो रहा है","मैंने उसे बताया कि सो रहा है राम","उसे मैंने बताया कि राम सो रहा है","उसे मैंने बताया कि सो रहा है राम","मैंने बताया उसे कि राम सो रहा है","मैंने बताया उसे कि सो रहा है राम","उसे बताया मैंने कि राम सो रहा है","उसे बताया मैंने कि सो रहा है राम","बताया मैंने उसे कि राम सो रहा है","बताया मैंने उसे कि सो रहा है राम","बताया उसे मैंने कि राम सो रहा है","बताया उसे मैंने कि सो रहा है राम"],["राम खाकर सोया","खाकर राम सोया","राम सोया खाकर","खाकर सोया राम","सोया राम खाकर","सोया खाकर राम"],
 ["बिल्लियों को मारकर कुत्ता सो गया","मारकर बिल्लियों को कुत्ता सो गया","बिल्लियों को मारकर सो गया कुत्ता","मारकर बिल्लियों को सो गया कुत्ता","कुत्ता सो गया बिल्लियों को मारकर","कुत्ता सो गया मारकर बिल्लियों को","सो गया कुत्ता बिल्लियों को मारकर","सो गया कुत्ता मारकर बिल्लियों को"],
 ["एक लाल किताब वहाँ है","एक लाल किताब है वहाँ","वहाँ है एक लाल किताब","है वहाँ एक लाल किताब"],["एक बड़ी सी किताब वहाँ है","एक बड़ी सी किताब है वहाँ","बड़ी सी एक किताब वहाँ है","बड़ी सी एक किताब है वहाँ","वहाँ है एक बड़ी सी किताब","वहाँ है बड़ी सी एक किताब","है वहाँ एक बड़ी सी किताब","है वहाँ बड़ी सी एक किताब"]];
+function engrandom()
+{
+document.getElementById("p1").innerHTML="Form a sentence (Declarative or Interrogative or any other type) from the given words"+"<br/>";
+var r=Math.floor(Math.random()*(english.length-1));
+var ar=english[r][0].split(" ");
+var x,t;
+for(var i=0;i<ar.length;i++)
+{x = document.createElement("BUTTON");
+ t = document.createTextNode(ar[i]);
+  x.appendChild(t);
+document.getElementById("p0").appendChild(x);
+//document.write(ar[i]+"<br />");
 }
+}
+function hinrandom()
+{
+document.getElementById("p1").innerHTML="दिए गए शब्दों में से एक वाक्य (डिक्लेरेटिव या इंट्रोगेटिव या किसी अन्य प्रकार)";
+var r=Math.floor(Math.random()*(hindi.length-1));
+var ar=hindi[r][0].split(" ");
+var x,t;
+for(var i=0;i<ar.length;i++)
+{x = document.createElement("BUTTON");
+ t = document.createTextNode(ar[i]);
+  x.appendChild(t);
+document.getElementById("p0").appendChild(x);
+}
+}
+function p()
+{
+var x;
+x=document.getElementById("language").value;
+//alert(x);
+if(x.localeCompare("english")==0)
+{
+engrandom();
+}
+else
+{hinrandom();
+}
+}
+
