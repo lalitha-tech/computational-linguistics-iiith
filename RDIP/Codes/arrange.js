@@ -48,7 +48,7 @@ x.style.paddingRight='15px';
   x.appendChild(t);
 document.getElementById("p0").appendChild(x);
 }
-document.getElementById("p1").innerHTML="Formed Sentence";
+
 x = document.createElement("BUTTON");
 t = document.createTextNode("RESET");
 x.style.fontSize = '15px';
@@ -64,7 +64,7 @@ document.getElementById("p5").appendChild(l);
 var correct=document.getElementById("p5").childNodes;
 
 var c = document.getElementById("p0").childNodes;
-
+var count=0;
 var x="";
 var z=" ";
 var flag=0;
@@ -104,7 +104,6 @@ y=y+english[r][i]+"<br/>";
 }
 alert("Scroll down view answer");
 document.getElementById("p7").innerHTML=y;
-document.getElementById("p7").focus();
 }
 
 //var y=document.getElementById("p6").childNodes[0].onclick=function(){alert("hii");}
@@ -115,6 +114,13 @@ x=x+english[r][i];
 document.getElementById("p7").innerHTML=x;*/
 }
 }
+count++;
+if(count==c.length)
+{document.getElementById("p1").innerHTML="Formed Sentence";
+document.getElementById("p1").onclick=function(){reset();}
+}
+else
+document.getElementById("p1").innerHTML="The number of words used are "+count;
 this.style.display="none";
 var node = document.createElement("BUTTON");                 
 var textnode = document.createTextNode(this.value);         
