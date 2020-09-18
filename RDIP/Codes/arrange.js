@@ -20,10 +20,7 @@ function reset()
 var node=document.getElementById("p2");
 document.getElementById("p0").querySelectorAll('*').forEach(n => (n.style.display="initial"));
 node.querySelectorAll('*').forEach(n => n.remove());
-}
-correctness()
-{alert("hii");
-alert(x);
+document.getElementById("p6").innerHTML=" ";
 }
 function engrandom()
 {
@@ -119,12 +116,12 @@ document.getElementById("p7").innerHTML=x;*/
 }
 }
 this.style.display="none";
-var node = document.createElement("BUTTON");                 // Create a <li> node
-var textnode = document.createTextNode(this.value);         // Create a text node
+var node = document.createElement("BUTTON");                 
+var textnode = document.createTextNode(this.value);         
 node.appendChild(textnode); 
 node.style.fontSize = '20px';
 node.style.paddingLeft = "15px";
-node.style.paddingRight = "15px";                             // Append the text to <li>
+node.style.paddingRight = "15px";                            
 document.getElementById("p2").appendChild(node); 
 //document.getElementById("p2").appendChild(c[i]);
 x=x+this.value+z;//alert(x); 
@@ -136,7 +133,7 @@ x=x+this.value+z;//alert(x);
 function hinrandom()
 {
 document.getElementById("p3").innerHTML="Form a sentence (Declarative or Interrogative or any other type) from the given words"+"<br/>";
-var r=Math.floor(Math.random()*(english.length-1));
+var r=Math.floor(Math.random()*(hindi.length-1));
 var ar=hindi[r][0].split(" ");
 for(var i=0;i<ar.length;i++)
 {
@@ -189,7 +186,7 @@ for(var i=0;i<hindi.length;i++)
 {
 for(var j=0;j<hindi[i].length;j++)
 {
-if(((x.trim()).localeCompare(english[i][j]))==0)
+if(((x.trim()).localeCompare(hindi[i][j]))==0)
 {document.getElementById("p6").innerHTML="correct";flag=1;break;
 }
 }
@@ -211,11 +208,10 @@ x.onclick=function(){
 var y="";
 for(var i=0;i<hindi[r].length;i++)
 {
-y=y+english[r][i]+"<br/>";
+y=y+hindi[r][i]+"<br/>";
 }
 alert("Scroll down view answer");
 document.getElementById("p7").innerHTML=y;
-document.getElementById("p7").focus();
 }
 
 //var y=document.getElementById("p6").childNodes[0].onclick=function(){alert("hii");}
@@ -227,12 +223,12 @@ document.getElementById("p7").innerHTML=x;*/
 }
 }
 this.style.display="none";
-var node = document.createElement("BUTTON");                 // Create a <li> node
-var textnode = document.createTextNode(this.value);         // Create a text node
+var node = document.createElement("BUTTON");                
+var textnode = document.createTextNode(this.value);         
 node.appendChild(textnode); 
 node.style.fontSize = '20px';
 node.style.paddingLeft = "15px";
-node.style.paddingRight = "15px";                             // Append the text to <li>
+node.style.paddingRight = "15px";                             
 document.getElementById("p2").appendChild(node); 
 //document.getElementById("p2").appendChild(c[i]);
 x=x+this.value+z;//alert(x); 
