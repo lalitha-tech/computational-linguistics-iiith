@@ -29,6 +29,7 @@ document.getElementById("p2").innerHTML=" ";
 node=document.getElementById("p1").innerHTML=" ";
 count=0;
 }
+//toggle function
 function toggle()
 {
 if(flag1==0)
@@ -51,6 +52,7 @@ document.getElementById("p6").innerHTML=" ";
 document.getElementById("p7").innerHTML=" ";
 text=" ";
 }
+//function for english statements
 function engrandom()
 {
 document.getElementById("p3").innerHTML="Form a sentence (Declarative or Interrogative or any other type) from the given words"+"<br/>";
@@ -166,6 +168,7 @@ document.getElementById("p2").innerHTML=text;
 }
 
 }
+//function for hindi statements
 function hinrandom()
 {
 document.getElementById("p3").innerHTML="Form a sentence (Declarative or Interrogative or any other type) from the given words"+"<br/>"+"दिए गए शब्दों में से एक वाक्य (डिक्लेरेटिव या इंट्रोगेटिव या किसी अन्य प्रकार)";
