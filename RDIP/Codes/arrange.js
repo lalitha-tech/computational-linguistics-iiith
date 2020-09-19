@@ -32,11 +32,11 @@ count=0;
 function toggle()
 {
 if(flag1==0)
-{t.nodeValue="GET ANSWERS";flag1=1;document.getElementById("p7").innerHTML=" ";}
+{t.nodeValue="Get Answers";flag1=1;document.getElementById("p7").innerHTML=" ";}
 else
 {
 flag1=0;
-t.nodeValue="Hide Answers";
+t.nodeValue="Hide the Correct Sentence";
 }
 }
 
@@ -79,13 +79,13 @@ document.getElementById("p0").appendChild(x);
 }
 
 x = document.createElement("BUTTON");
-t = document.createTextNode("RESET");
+t = document.createTextNode("Reform sentence");
 x.style.fontSize = '15px';
 x.appendChild(t);
 document.getElementById("p4").appendChild(x);
 var d=document.getElementById("p4").childNodes;
 var l = document.createElement("BUTTON");
-var k = document.createTextNode("CHECK CORRECTNESS");
+var k = document.createTextNode("Check the correctness of the sentence");
 l.style.fontSize = '15px';
 l.style.paddingLeft='15px';
 l.appendChild(k);
@@ -108,21 +108,21 @@ for(var i=0;i<english.length;i++)
 for(var j=0;j<english[i].length;j++)
 {
 if(((x.trim()).localeCompare(english[i][j]))==0)
-{document.getElementById("p6").innerHTML="correct";flag=1;break;
+{document.getElementById("p6").innerHTML="Correct Answer!!!";flag=1;break;
 }
 }
 if(flag==1)
 break;
 }
 if(flag==0)
-{document.getElementById("p6").innerHTML="wrong    "+"<br/>"+"<br/>";
+{document.getElementById("p6").innerHTML="Wrong Answer!!!"+"<br/>"+"<br/>";
 x = document.createElement("BUTTON");
 x.value="correctans";
 x.style.fontSize = '20px';
 x.style.paddingLeft='15px';
 x.style.paddingRight='15px';
 //x.style.margin-right='16px';
- t = document.createTextNode("GET ANSWERS");
+ t = document.createTextNode("Get the correct Sentence");
   x.appendChild(t);
 document.getElementById("p6").appendChild(x);
 x.onclick=function(){
@@ -142,7 +142,7 @@ document.getElementById("p7").innerHTML=y;}
 var flag2=0;
 count++;
 if(count==c.length)
-{document.getElementById("p1").innerHTML="Formed Sentence";
+{document.getElementById("p1").innerHTML="Formed Sentence(after selecting words)";
 
 document.getElementById("p1").onclick=function(){reset();document.getElementById("p2").innerHTML=" ";flag2=1;}
 }
@@ -168,7 +168,7 @@ document.getElementById("p2").innerHTML=text;
 }
 function hinrandom()
 {
-document.getElementById("p3").innerHTML="Form a sentence (Declarative or Interrogative or any other type) from the given words"+"<br/>";
+document.getElementById("p3").innerHTML="Form a sentence (Declarative or Interrogative or any other type) from the given words"+"<br/>"+"दिए गए शब्दों में से एक वाक्य (डिक्लेरेटिव या इंट्रोगेटिव या किसी अन्य प्रकार)";
 var r=Math.floor(Math.random()*(hindi.length-1));
 var ar=hindi[r][0].split(" ");
 for(var i=0;i<ar.length;i++)
@@ -194,13 +194,13 @@ document.getElementById("p0").appendChild(x);
 }
 
 x = document.createElement("BUTTON");
-t = document.createTextNode("RESET");
+t = document.createTextNode("Reform Sentence");
 x.style.fontSize = '15px';
 x.appendChild(t);
 document.getElementById("p4").appendChild(x);
 var d=document.getElementById("p4").childNodes;
 var l = document.createElement("BUTTON");
-var k = document.createTextNode("CHECK CORRECTNESS");
+var k = document.createTextNode("Check the correctness of the sentence");
 l.style.fontSize = '15px';
 l.style.paddingLeft='15px';
 l.appendChild(k);
@@ -223,21 +223,21 @@ for(var i=0;i<hindi.length;i++)
 for(var j=0;j<hindi[i].length;j++)
 {
 if(((x.trim()).localeCompare(hindi[i][j]))==0)
-{document.getElementById("p6").innerHTML="correct";flag=1;break;
+{document.getElementById("p6").innerHTML="Correct Answer!!!";flag=1;break;
 }
 }
 if(flag==1)
 break;
 }
 if(flag==0)
-{document.getElementById("p6").innerHTML="wrong    "+"<br/>"+"<br/>";
+{document.getElementById("p6").innerHTML="Wrong Answer!!!"+"<br/>"+"<br/>";
 x = document.createElement("BUTTON");
 x.value="correctans";
 x.style.fontSize = '20px';
 x.style.paddingLeft='15px';
 x.style.paddingRight='15px';
 //x.style.margin-right='16px';
- t = document.createTextNode("GET ANSWERS");
+ t = document.createTextNode("Get the correct Sentence");
   x.appendChild(t);
 document.getElementById("p6").appendChild(x);
 x.onclick=function(){
@@ -257,20 +257,13 @@ document.getElementById("p7").innerHTML=y;}
 var flag2=0;
 count++;
 if(count==c.length)
-{document.getElementById("p1").innerHTML="Formed Sentence";
+{document.getElementById("p1").innerHTML="Formed Sentence(after selecting words)";
 
 document.getElementById("p1").onclick=function(){reset();document.getElementById("p2").innerHTML=" ";flag2=1;}
 }
 else
 {document.getElementById("p1").innerHTML="The number of words used are "+count;}
 this.style.display="none";
-/*var node = document.createElement("BUTTON");                 
-var textnode = document.createTextNode(this.value);         
-node.appendChild(textnode); 
-node.style.fontSize = '20px';
-node.style.paddingLeft = "15px";
-node.style.paddingRight = "15px";                            
-document.getElementById("p2").appendChild(node); */
 //document.getElementById("p2").appendChild(c[i]);
 if(flag2==0)
 {x=x+this.value+z;
@@ -287,8 +280,7 @@ var x;
 x=document.getElementById("language").value;
 //alert(x);
 if(x.localeCompare("english")==0)
-{//var node=document.getElementById("p0");
-//node.querySelectorAll('*').forEach(n => n.remove());
+{
 languagechange();
 engrandom();
 }
