@@ -14,13 +14,42 @@ var hindi=[["राम और श्याम बाजार गयें","र
 ["बिल्लियों को मारकर कुत्ता सो गया","मारकर बिल्लियों को कुत्ता सो गया","बिल्लियों को मारकर सो गया कुत्ता","मारकर बिल्लियों को सो गया कुत्ता","कुत्ता सो गया बिल्लियों को मारकर","कुत्ता सो गया मारकर बिल्लियों को","सो गया कुत्ता बिल्लियों को मारकर","सो गया कुत्ता मारकर बिल्लियों को"],
 ["एक लाल किताब वहाँ है","एक लाल किताब है वहाँ","वहाँ है एक लाल किताब","है वहाँ एक लाल किताब"],["एक बड़ी सी किताब वहाँ है","एक बड़ी सी किताब है वहाँ","बड़ी सी एक किताब वहाँ है","बड़ी सी एक किताब है वहाँ","वहाँ है एक बड़ी सी किताब","वहाँ है बड़ी सी एक किताब","है वहाँ एक बड़ी सी किताब","है वहाँ बड़ी सी एक किताब"]];
 
+var count=0;
+var x,t,flag1=1;
+var text=" ";
+function languagechange()
+{var node;
+ node=document.getElementById("p0");
+node.querySelectorAll('*').forEach(n => n.remove());
+node=document.getElementById("p4");
+node.querySelectorAll('*').forEach(n => n.remove());
+node=document.getElementById("p5");
+node.querySelectorAll('*').forEach(n => n.remove());
+document.getElementById("p2").innerHTML=" ";
+node=document.getElementById("p1").innerHTML=" ";
+count=0;
+}
+function toggle()
+{
+if(flag1==0)
+{t.nodeValue="GET ANSWERS";flag1=1;document.getElementById("p7").innerHTML=" ";}
+else
+{
+flag1=0;
+t.nodeValue="Hide Answers";
+}
+}
 
 function reset()
-{
+{count=0;
+document.getElementById("p1").innerHTML=" ";
 var node=document.getElementById("p2");
 document.getElementById("p0").querySelectorAll('*').forEach(n => (n.style.display="initial"));
 node.querySelectorAll('*').forEach(n => n.remove());
+document.getElementById("p2").innerHTML=" ";
 document.getElementById("p6").innerHTML=" ";
+document.getElementById("p7").innerHTML=" ";
+text=" ";
 }
 function engrandom()
 {
@@ -34,7 +63,7 @@ temp=ar[i];
 ar[i]=ar[j];
 ar[j]=temp;
 }
-var x,t;
+
 var flag=0;
 var q=[];
 for(var i=0;i<ar.length;i++)
@@ -64,7 +93,7 @@ document.getElementById("p5").appendChild(l);
 var correct=document.getElementById("p5").childNodes;
 
 var c = document.getElementById("p0").childNodes;
-var count=0;
+
 var x="";
 var z=" ";
 var flag=0;
@@ -93,46 +122,47 @@ x.style.fontSize = '20px';
 x.style.paddingLeft='15px';
 x.style.paddingRight='15px';
 //x.style.margin-right='16px';
- t = document.createTextNode("correct answers");
+ t = document.createTextNode("GET ANSWERS");
   x.appendChild(t);
 document.getElementById("p6").appendChild(x);
 x.onclick=function(){
+toggle();
 var y="";
 for(var i=0;i<english[r].length;i++)
 {
 y=y+english[r][i]+"<br/>";
 }
-alert("Scroll down view answer");
-document.getElementById("p7").innerHTML=y;
-}
 
-//var y=document.getElementById("p6").childNodes[0].onclick=function(){alert("hii");}
-/*for(var i=0;i<english[r].length;i++)
-{
-x=x+english[r][i];
-}
-document.getElementById("p7").innerHTML=x;*/
+if(flag1==0)
+{alert("Scroll down view answer");
+document.getElementById("p7").innerHTML=y;}
 }
 }
+}
+var flag2=0;
 count++;
 if(count==c.length)
 {document.getElementById("p1").innerHTML="Formed Sentence";
-document.getElementById("p1").onclick=function(){reset();}
+
+document.getElementById("p1").onclick=function(){reset();document.getElementById("p2").innerHTML=" ";flag2=1;}
 }
 else
-document.getElementById("p1").innerHTML="The number of words used are "+count;
+{document.getElementById("p1").innerHTML="The number of words used are "+count;}
 this.style.display="none";
-var node = document.createElement("BUTTON");                 
+/*var node = document.createElement("BUTTON");                 
 var textnode = document.createTextNode(this.value);         
 node.appendChild(textnode); 
 node.style.fontSize = '20px';
 node.style.paddingLeft = "15px";
 node.style.paddingRight = "15px";                            
-document.getElementById("p2").appendChild(node); 
+document.getElementById("p2").appendChild(node); */
 //document.getElementById("p2").appendChild(c[i]);
-x=x+this.value+z;//alert(x); 
+if(flag2==0)
+{text=text+this.value+z;//alert(x);
+document.getElementById("p2").innerHTML=text;
 }
- //document.getElementById("p2").innerHTML=x;
+}
+
 }
 
 }
@@ -148,7 +178,7 @@ temp=ar[i];
 ar[i]=ar[j];
 ar[j]=temp;
 }
-var x,t;
+
 var flag=0;
 var q=[];
 for(var i=0;i<ar.length;i++)
@@ -162,7 +192,7 @@ x.style.paddingRight='15px';
   x.appendChild(t);
 document.getElementById("p0").appendChild(x);
 }
-document.getElementById("p1").innerHTML="Formed Sentence";
+
 x = document.createElement("BUTTON");
 t = document.createTextNode("RESET");
 x.style.fontSize = '15px';
@@ -207,67 +237,64 @@ x.style.fontSize = '20px';
 x.style.paddingLeft='15px';
 x.style.paddingRight='15px';
 //x.style.margin-right='16px';
- t = document.createTextNode("correct answers");
+ t = document.createTextNode("GET ANSWERS");
   x.appendChild(t);
 document.getElementById("p6").appendChild(x);
 x.onclick=function(){
+toggle();
 var y="";
 for(var i=0;i<hindi[r].length;i++)
 {
 y=y+hindi[r][i]+"<br/>";
 }
-alert("Scroll down view answer");
-document.getElementById("p7").innerHTML=y;
-}
 
-//var y=document.getElementById("p6").childNodes[0].onclick=function(){alert("hii");}
-/*for(var i=0;i<english[r].length;i++)
-{
-x=x+english[r][i];
-}
-document.getElementById("p7").innerHTML=x;*/
+if(flag1==0)
+{alert("Scroll down view answer");
+document.getElementById("p7").innerHTML=y;}
 }
 }
+}
+var flag2=0;
+count++;
+if(count==c.length)
+{document.getElementById("p1").innerHTML="Formed Sentence";
+
+document.getElementById("p1").onclick=function(){reset();document.getElementById("p2").innerHTML=" ";flag2=1;}
+}
+else
+{document.getElementById("p1").innerHTML="The number of words used are "+count;}
 this.style.display="none";
-var node = document.createElement("BUTTON");                
+/*var node = document.createElement("BUTTON");                 
 var textnode = document.createTextNode(this.value);         
 node.appendChild(textnode); 
 node.style.fontSize = '20px';
 node.style.paddingLeft = "15px";
-node.style.paddingRight = "15px";                             
-document.getElementById("p2").appendChild(node); 
+node.style.paddingRight = "15px";                            
+document.getElementById("p2").appendChild(node); */
 //document.getElementById("p2").appendChild(c[i]);
-x=x+this.value+z;//alert(x); 
+if(flag2==0)
+{x=x+this.value+z;
+document.getElementById("p2").innerHTML=x;}
 }
- //document.getElementById("p2").innerHTML=x;
+
 }
 
 }
 
-/*function hinrandom()
-{
-document.getElementById("p2").innerHTML="दिए गए शब्दों में से एक वाक्य (डिक्लेरेटिव या इंट्रोगेटिव या किसी अन्य प्रकार)";
-var r=Math.floor(Math.random()*(hindi.length-1));
-var ar=hindi[r][0].split(" ");
-var x,t;
-for(var i=0;i<ar.length;i++)
-{x = document.createElement("BUTTON");
- t = document.createTextNode(ar[i]);
-  x.appendChild(t);
-document.getElementById("p0").appendChild(x);
-}
-}*/
 function p()
 {
 var x;
 x=document.getElementById("language").value;
 //alert(x);
 if(x.localeCompare("english")==0)
-{
+{//var node=document.getElementById("p0");
+//node.querySelectorAll('*').forEach(n => n.remove());
+languagechange();
 engrandom();
 }
 else
-{hinrandom();
+{languagechange();
+hinrandom();
 }
 }
 
