@@ -107,7 +107,7 @@ for(var i=0;i<english.length;i++)
 {
 for(var j=0;j<english[i].length;j++)
 {
-if(((x.trim()).localeCompare(english[i][j]))==0)
+if(((text.trim()).localeCompare(english[i][j]))==0)
 {document.getElementById("p6").innerHTML="Correct Answer!!!";flag=1;break;
 }
 }
@@ -222,7 +222,7 @@ for(var i=0;i<hindi.length;i++)
 {
 for(var j=0;j<hindi[i].length;j++)
 {
-if(((x.trim()).localeCompare(hindi[i][j]))==0)
+if(((text.trim()).localeCompare(hindi[i][j]))==0)
 {document.getElementById("p6").innerHTML="Correct Answer!!!";flag=1;break;
 }
 }
@@ -266,8 +266,8 @@ else
 this.style.display="none";
 //document.getElementById("p2").appendChild(c[i]);
 if(flag2==0)
-{x=x+this.value+z;
-document.getElementById("p2").innerHTML=x;}
+{text=text+this.value+z;
+document.getElementById("p2").innerHTML=text;}
 }
 
 }
