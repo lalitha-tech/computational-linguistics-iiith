@@ -1,0 +1,3 @@
+This experiment has various functionalities such as 
+dropdown which is used to select the corpus
+on selecting the corpus it is run against the algorithm in order to calculate the tokens and types
